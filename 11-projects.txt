@@ -1,0 +1,36 @@
+projects:
+
+===jenkins===
+
+major:
+
+netflix_clone:                                    url: https://www.youtube.com/watch?v=g8X5AoqCJHc&t=1270s   ✔️
+Ultimate CICD Corporate DevOps Pipeline Project:  url:https://www.youtube.com/watch?v=NnkUGzaqqOc&t=3561s    ⚠️
+11 Microservice CICD Pipeline DevOps Project:     url:https://www.youtube.com/watch?v=SO3XIJCtmNs
+Python Microservices video to audio converter app: url:https://www.youtube.com/watch?v=jHlRqQzqB_Y&list=PLOa-edppsqFnW0pQrnYf_2rEUI8mgfwuX
+https://www.youtube.com/watch?v=JGQI5pkK82w
+
+minor
+1. jenkins-ec2 dynamic node creation ✔️
+2  Jenkins shared lib                ✔️
+3. Jenkins parallel build and blue ocean ui  ✔️
+4. Jenkins k8s as slave nodes
+5. Jenkins metric for health check    ✔️
+6. scripted pipelines 
+
+
+====github-actions====
+github-action https://www.youtube.com/watch?v=Ke_Wr5zPE0A
+
+
+===aws-pj===
+
+minor:
+1. aws ec2 , window's and mac usage
+2. manual installion manament of 3 databases
+
+
+
+===k8s===big===pj===
+udemy
+

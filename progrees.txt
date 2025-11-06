@@ -1,0 +1,113 @@
+-----DevSecOps----
+1.what is DevOps
+    - sdlc
+    - devops vs sdlc vs devsecops   
+                                         ---✔️
+2.Basics
+    - networking
+    - os
+                                          ---✔️
+3.Vcm&Scm
+    - git
+                                          ---✔️
+4.Code
+    - github
+    - bitbucket
+                                         ---✔️
+5.linux
+    - ubuntu ,amazon
+                                         ---✔️
+6.ci/cd 
+    - jenkins   ---✔️
+    - github actions   ---✔️
+    - argocd           ---✔️
+    - azure DevOps
+
+7.Configure management
+    - ansible
+7.1 Iac
+    - terraform
+
+8.containers
+    - docker
+    - podman
+                                          ---✔️
+9.orchestration
+    - k8s
+        - kops (prod)
+        - eks (prod)
+        - kind (test)
+
+10.infra provioning
+    - terraform-aws
+    - terraform-azure
+
+13.cloude
+    - aws
+    - azure
+
+12.monitoring/logging
+    - promethus
+    - grafana
+    - newrelic
+    - datadog
+    
+
+11.scripting
+    - bashscripting
+    - python
+
+
+12.Security
+    - static code analysis
+        - sonar-qube
+    - buils tools
+        - maven,gradle,ant--java
+        - npm,pnpm,yarn--nodejs
+        - pip---python
+        -.net
+        -go
+    - Artifactory storage
+        - nexsus
+        - jfrog
+    - dependecy-check
+        - docker scout
+        - owasp
+    - scanning
+        - trivy
+                                  ---✔️
+13.deployment
+    - nginx
+    - tomcat
+                                   ---✔️
+
+
+extas:
+azure
+python
+powershell for windows
+
+
+
+
+
+AWS
+🧩 Suggested Learning Order (Roadmap)
+
+IAM + EC2 + S3 + VPC → foundation ✅
+
+Auto Scaling + ELB + Route 53 → networking + scalability  ✅
+
+CloudWatch + CloudTrail → monitoring + logs   
+
+CodePipeline + CodeBuild + CodeDeploy → CI/CD
+
+ECR + ECS/EKS + Fargate → container orchestration
+
+Lambda + API Gateway + SQS/SNS → serverless
+
+Terraform or CloudFormation → IaC automation
+
+Security + KMS + WAF + Secrets Manager → secure deployment
+
+Monitoring with Prometheus/Grafana → observability
