@@ -1,4 +1,4 @@
-## Question  
+-## Question  
 Explain the Git branching strategy you used in your company. Align it with the open-source branching strategy followed by Kubernetes.
 
 ### 📝 Short Explanation  

@@ -44,10 +44,15 @@
    git log --pretty=oneline    ==>this will only show commit message and commit ids
    git log -2  OR -3                       ==>only shows last 2 commits on screen
    git log --follow --all <FileName>       ==>filename used to see the no of commits for a single file
+   git log --stats ==> full info
+   git log --after="date"
+   git log --grep="wordname"
 
+1
 
  8.git rm --cache [file-name.txt]	==>Remove a file (folder) from staging stage and git will not track it it like adding it to .gitignore work any time 
-   git restore --staged filename   ==>Remove a file (or folder) from staging area and git still track it and only work when there atlest one commit 
+   git restore --staged filename   ==>Remove a file (or folder) from staging area and git still track it and only work 
+   when there atlest one commit 
    git reset filename              ==>Remove a file (or folder) from staging area
 
 
@@ -81,22 +86,19 @@
 
 
  12.git branch                                           ==>used to see the list of branches
-    git branch -a or --all or -r(remote) or -l(local)  ==>List all branches (local and remote)
-    
-    git branch branch-name         ==>to create a branch
+    git branch -a or --all or -r(remote) or -l(local)    ==>List all branches (local and remote)
+    git branch branch-name                         ==>to create a branch
+    git branch -m old-branch new-branch            ==>used to rename a branch
+    git branch -d branch-name                      ==>to delete a branch
+    git branch -D [branch name]                    ==>to delete a branch forcefully
+    git branch my-branch a2b4c6d                   ==>Recreate the branch from that commit
+
+    git checkout branch-name       ==>to switch one branch to another
     git checkout -b branch-name    ==>used to create and switch a branch at a time
     git checkout -b [branch name] origin/[branch name]   ==>Clone a remote branch and switch to it
-    git checkout branch-name       ==>to switch one branch to another
-    git switch brnach-name         ==>to switch one branch to another
     git checkout -b <new-branch-name>  <commit-hash>   ==> ==>Used to get deleted branch id
- 
-
-    git branch -m old-branch new-branch                  ==>used to rename a branch
+    git switch brnach-name         ==>to switch one branch to another
     git diff [source branch] [target branch]	         ==>Preview changes before merging
-
-    git branch -d branch-name                   ==>to delete a branch
-    git branch -D [branch name]                 ==>to delete a branch forcefully
-    git push origin --delete [branch name]      ==>Delete a remote branch
 
 
 
@@ -118,6 +120,7 @@
    git pull                       ==>Update local repository to the newest commit with merge
    git pull origin [branch-name]  ==>Pull changes from remote repository
    git pull --rebase`             ==>Keep your branch up-to-date while avoiding extra merge commits.
+
 
 
 16.git remote -v                        ==>To see current remote url
@@ -152,12 +155,12 @@
 
 
    git stash save "message"    ==>to save the stash along with the message
-   git stash apply             ==>to get back the data again
    git stash list      ==>to get the list of stashes
-   git stash clear     ==> to clear all stashes
+   git stash apply             ==>to get back the data again
    git stash pop       ==>apply then delete the first stash 
    git stash drop      ==>used to delete the latest stash
    git stash drop stash@{2}   ==>used to delete a praticular stash
+   git stash clear     ==> to clear all stashes
 
 
 
@@ -177,13 +180,39 @@
 
 
 21. git fsck  ====> does not modify anything — it’s purely diagnostic.
-    - git fsck --lost-found  --to see full lost data
-    - git branch restore-branch <commit-hash>
-
-22. git prune
+    git fsck --lost-found  --to see full lost data
+    git branch restore-branch <commit-hash>
 
 
+22. git prune and git gc are debbuging cleaning commandns The git gc command in Git performs "garbage collection" within the local repository. This command executes various housekeeping tasks to optimize the repository's performance and reduce its disk space usage.
 
+
+23. git config --global alias.co "checkout" ====>git alias — Create Custom Shortcuts
+git config --global alias.cm "commit -m"
+git config --global alias.lg "log --oneline --graph --decorate --all"
+
+
+
+24. git archive  ==> Creates a zip/tar file of your repo without the .git history.
+
+Example:
+git archive -o project.zip HEAD
+
+Useful when:
+You want to share code but not Git history.
+You want to deploy only source files.
+
+
+25. git notes  ==> Attach extra metadata to commits without changing the commit hash.
+
+Example:
+git notes add -m "Reviewed by Harshith"
+git notes show <commit>
+
+
+Useful when:
+You want to add review comments, CI metadata, issue IDs.
+You don't want to change commit history.
 
 
 
@@ -217,3 +246,17 @@
 28.git config 
 29.git blame
 30.git fsck
+31.git prune && git gc
+
+
+
+
+Summary of Git Best Practices
+Commit Often
+Write Clear Commit Messages
+Use Branches
+Pull Before You Push
+Review Changes Before Committing
+Keep Repositories Small
+Use .gitignore
+Tag Releases

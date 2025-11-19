@@ -1,0 +1,16 @@
+“Hi, I’m Harshith, a 2024 B.Tech graduate from XX University, Chennai.
+I’m passionate about DevOps and Cloud Engineering, and I’ve built strong hands-on experience through freelance and personal projects, where I worked on deploying full-stack applications, automating CI/CD pipelines, and managing cloud infrastructure.
+
+
+skils
+os -> linux(ubuntu, amazon linux)
+ci/cd -> jenkins,gtihub actions
+scm/vcm ->git,github,bitbucket
+containarization/ocastration -> docker, k8s
+configuratuon/infrastructure-> ansible, terraform
+cloud -> aws,azure gcp(basics) ->(vpc,s3,ec3,ebs,lb,asg,route53,acm,ecr,ecs,eks,efs,cloudefromation)
+monotoring/logging -> promethus, grafana, newrelic, datadog
+scripting->bash-script,python(basics)
+securrity-tool -> sonar-qube,nexsus,trivy,docker-scout,
+
+

@@ -1,10 +1,12 @@
 # DevOps Interview Notes
 
 ## 1. DevOps
-DevOps is a set of practices, cultural philosophies, and tools that combine software development and IT operations to deliver high‑quality software faster and more reliably.
+DevOps is a set of practices, cultural philosophies, and tools that combine software development and IT operations to deliver high‑quality software faster and more reliably.  
+
 
 ## 2. DevSecOps
-DevSecOps integrates security into every stage of the software development lifecycle, making security a shared responsibility across development, security, and operations teams.
+DevSecOps integrates security into every stage of the software development lifecycle, making security a shared responsibility across development, security, and operations teams.  
+
 
 ## 3. Benefits of DevOps
 - Improved collaboration between teams  
@@ -14,7 +16,7 @@ DevSecOps integrates security into every stage of the software development lifec
 - Enhanced security (when integrated)  
 - Reduced lead time for changes and faster recovery
 
-## 4. What do you take into consideration when choosing a tool/technology?
+## 4. What do you take into consideration when choosing a tool/technology? 
 - Maturity and stability vs. cutting edge  
 - Community size and ecosystem (plugins, integrations, support)  
 - Architecture (agent vs. agentless, master vs. masterless)  
@@ -47,11 +49,7 @@ Be prepared to explain why you chose a specific tool and how you used it in prac
 - Capacity planning, performance tuning, and reliability engineering  
 - Improve monitoring, observability, and alerting
 
-## 8. CI/CD pipeline best practices
-- Keep pipelines fast and modular; fail fast on code issues  
-- Use feature branches, pull requests, and gated merges  
-- Automate tests (unit, integration, e2e) and security scans in pipeline  
-- Promote immutable artifacts through environments (build once, deploy many)  
-- Store pipeline configuration as code and secure secrets (vaults, secret managers)
+
+
 
 

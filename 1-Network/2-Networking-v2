@@ -1,0 +1,473 @@
+Great, Harshith.
+Here are your **COMPLETE Networking Interview Notes** in **Q&A format**, with **3–4 line explanations for every concept**, covering **Basics → DNS → OSI/TCP-IP → Protocols → Devices → Security → Cloud Networking → Advanced Concepts → Tools**, plus a **full DevOps/DevSecOps/Database ports table** at the end.
+
+This is your **final networking master sheet** for interviews.
+
+---
+
+# 🟦 **NETWORKING INTERVIEW NOTES (Q&A Format, 3–4 Line Answers)**
+
+---
+
+# 🔵 **1️⃣ BASICS OF NETWORKING**
+
+---
+
+### **Q1. What is an IP Address?**
+
+An IP address is a unique identifier assigned to a device on a network so it can communicate with other devices. It follows the Internet Protocol, which defines rules for sending and receiving data. IPs ensure that data reaches the correct destination on networks and the internet.
+
+---
+
+### **Q2. What is IPv4 vs IPv6?**
+
+IPv4 uses a 32-bit format and supports about 4.3 billion unique addresses. IPv6 uses a 128-bit address space, providing trillions of unique addresses to overcome IPv4 exhaustion. IPv6 also adds improved routing efficiency and security features like IPSec by default.
+
+---
+
+### **Q3. What is Public vs Private IP?**
+
+A public IP is globally unique and used to communicate over the internet. A private IP is used only within internal networks (LAN), and cannot be reached directly from the internet. Private ranges: 10.x.x.x, 172.16–31.x.x, 192.168.x.x.
+
+---
+
+### **Q4. What is Subnetting?**
+
+Subnetting divides a large network into smaller logical networks, helping improve performance, security, and IP allocation. It reduces broadcast traffic and organizes devices into manageable groups. It also helps control routing within a network.
+
+---
+
+### **Q5. What is CIDR?**
+
+CIDR (Classless Inter-Domain Routing) represents IP ranges using a suffix like /24 or /16. It defines how many bits are used for the network portion. CIDR makes IP allocation flexible compared to old class-based networks.
+
+---
+
+### **Q6. What is a MAC Address?**
+
+A MAC address is a 48-bit hardware ID burned into the NIC (Network Interface Card). It uniquely identifies a device at Layer 2 of OSI. Switches use MAC addresses to forward frames to correct devices.
+
+---
+
+### **Q7. What is the difference between MAC and IP?**
+
+MAC works at Layer 2 and delivers data inside a local network segment. IP works at Layer 3 and enables communication across networks and the internet. MAC is physical, IP is logical and can change.
+
+---
+
+### **Q8. What is ARP?**
+
+ARP (Address Resolution Protocol) maps IP addresses to MAC addresses. When a device wants to communicate within the network, it broadcasts an ARP request to find the target MAC. ARP is essential for local network communication.
+
+---
+
+### **Q9. What is DHCP?**
+
+DHCP automatically assigns IP addresses, gateway, DNS, and subnet mask to devices. It removes the need for manual configuration and ensures no IP conflicts. DHCP also supports lease times for IP lifecycle management.
+
+---
+
+# 🔵 **2️⃣ DNS (Domain Name System)**
+
+---
+
+### **Q10. What is DNS?**
+
+DNS translates human-readable domain names like google.com into IP addresses that machines understand. It acts like the internet’s phonebook. Without DNS, users would need to remember numerical IPs.
+
+---
+
+### **Q11. How does DNS work?**
+
+When you enter a domain, the resolver checks the browser cache → OS cache → router → ISP DNS → root servers → TLD servers → authoritative DNS server. Finally, the IP is returned to the client, enabling the connection.
+
+---
+
+### **Q12. What are different DNS Records?**
+
+* **A:** Domain → IPv4
+* **AAAA:** Domain → IPv6
+* **CNAME:** Domain alias
+* **MX:** Mail servers
+* **TXT:** Verification & policies
+* **NS:** Nameservers for the domain
+
+---
+
+### **Q13. What is DNS Resolution?**
+
+DNS resolution is the process of converting a domain name into its corresponding IP address. It may involve recursive or iterative queries. The result is cached to reduce future lookup time.
+
+---
+
+### **Q14. What is DNS Caching?**
+
+Caching stores DNS responses locally to speed up future lookups. It reduces DNS traffic and latency. Cached entries expire after a TTL (Time To Live).
+
+---
+
+# 🔵 **3️⃣ NETWORK MODELS**
+
+---
+
+### **Q15. What is the OSI Model?**
+
+OSI is a 7-layer model that standardizes how data moves across networks. Each layer performs specific functions like addressing, routing, or formatting. It helps troubleshoot and design networks systematically.
+
+---
+
+### **Q16. Explain all 7 layers of OSI.**
+
+* **Layer 1 – Physical:** Bits, cables, NICs
+* **Layer 2 – Data Link:** MAC, switches, frames
+* **Layer 3 – Network:** IP, routing
+* **Layer 4 – Transport:** TCP/UDP, segmentation
+* **Layer 5 – Session:** Maintains sessions
+* **Layer 6 – Presentation:** Encryption, compression
+* **Layer 7 – Application:** HTTP, DNS, user apps
+
+---
+
+### **Q17. What is the TCP/IP Model?**
+
+TCP/IP is a practical 4-layer model used in real networking. It includes Network Access, Internet, Transport, and Application layers. Most protocols today follow TCP/IP, not OSI.
+
+---
+
+### **Q18. Difference between OSI vs TCP/IP?**
+
+OSI has 7 layers while TCP/IP has 4. OSI is theoretical; TCP/IP is practical and used in real-world networking. Many OSI functions are combined in TCP/IP.
+
+---
+
+# 🔵 **4️⃣ PROTOCOLS**
+
+---
+
+### **Q19. Explain TCP vs UDP.**
+
+TCP is reliable, connection-oriented, and guarantees ordered delivery. UDP is connectionless, faster, and used in real-time streaming and DNS. TCP is for accuracy, UDP for speed.
+
+---
+
+### **Q20. What is TCP 3-way handshake?**
+
+The handshake establishes a TCP connection using SYN → SYN-ACK → ACK. It ensures both ends are ready for data transfer. It provides reliability and synchronization.
+
+---
+
+### **Q21. What is HTTP?**
+
+HTTP is the protocol used for transferring web data between clients and servers. It is stateless and works on port 80. It does not encrypt data.
+
+---
+
+### **Q22. What is HTTPS?**
+
+HTTPS is HTTP combined with SSL/TLS encryption for secure communication. It prevents man-in-the-middle attacks. It works on port 443.
+
+---
+
+### **Q23. What is SSL/TLS?**
+
+SSL/TLS encrypts data and ensures secure communication over networks. It uses certificates and public-key cryptography. TLS is the modern replacement for SSL.
+
+---
+
+### **Q24. What is FTP?**
+
+FTP transfers files between systems but sends data in plaintext. It uses port 21. It is not recommended for secure environments.
+
+---
+
+### **Q25. What is SFTP?**
+
+SFTP is secure file transfer built on top of SSH. It encrypts both control and data traffic. It uses port 22.
+
+---
+
+### **Q26. What is SSH?**
+
+SSH (Secure Shell) provides secure remote login and command execution. It encrypts all communication. It works on port 22.
+
+---
+
+### **Q27. What is SMTP?**
+
+SMTP sends emails between servers or from clients to servers. It works on port 25 (default) or 587 (secure). It cannot retrieve emails.
+
+---
+
+### **Q28. What is POP3?**
+
+POP3 downloads emails from the server to a local device and optionally deletes them from the server. It uses port 110. It is simple but not suitable for multi-device access.
+
+---
+
+### **Q29. What is IMAP?**
+
+IMAP lets users read emails from multiple devices without deleting them. It synchronizes inboxes across devices. It uses port 143.
+
+---
+
+# 🔵 **5️⃣ NETWORKING DEVICES**
+
+---
+
+### **Q30. What is a Router?**
+
+A router connects different networks and forwards packets using IP addresses. It selects optimal paths for data. Routers operate at Layer 3.
+
+---
+
+### **Q31. What is a Switch?**
+
+A switch connects multiple devices within a LAN and forwards frames based on MAC addresses. It reduces collision domains. It operates on Layer 2.
+
+---
+
+### **Q32. What is a Hub?**
+
+A hub broadcasts traffic to all connected devices, causing collisions. It has no intelligence and works at Layer 1. Switches have replaced hubs.
+
+---
+
+### **Q33. What is a Firewall?**
+
+A firewall filters incoming and outgoing traffic based on rules. It protects networks from unauthorized access. Firewalls can be hardware or software.
+
+---
+
+### **Q34. What is Stateful vs Stateless Firewall?**
+
+Stateful firewalls track active sessions and allow return traffic automatically. Stateless firewalls inspect packets independently without session memory. Stateful is more secure.
+
+---
+
+### **Q35. What is NAT?**
+
+NAT translates private IPs to a public IP to allow internet access. It hides internal networks and conserves public IP addresses. Types include SNAT, DNAT, and PAT.
+
+---
+
+### **Q36. What is a Load Balancer?**
+
+A load balancer distributes traffic across multiple servers to improve performance and availability. It prevents overload and ensures zero-downtime. Algorithms include round-robin and least connections.
+
+---
+
+### **Q37. What is a Proxy Server?**
+
+A proxy sits between a client and server and forwards requests on behalf of the client. It improves security, caching, and anonymity. Proxies can filter and log traffic.
+
+---
+
+### **Q38. What is a Gateway?**
+
+A gateway connects networks using different protocols. It performs protocol translation and acts as an entry/exit point. Examples: cloud Internet Gateways.
+
+---
+
+# 🔵 **6️⃣ NETWORK SECURITY**
+
+---
+
+### **Q39. What is a VPN?**
+
+A VPN encrypts network traffic and creates a secure tunnel between remote users and private networks. It protects data on public networks. Types include site-to-site and remote-access VPNs.
+
+---
+
+### **Q40. What is IDS?**
+
+IDS detects abnormal or malicious activities in a network. It alerts administrators but does not block traffic. It is passive monitoring.
+
+---
+
+### **Q41. What is IPS?**
+
+IPS actively blocks threats in real-time. It inspects packets and can drop malicious traffic. It provides active protection.
+
+---
+
+### **Q42. Symmetric vs Asymmetric Encryption?**
+
+Symmetric uses the same key for encryption/decryption and is fast. Asymmetric uses public/private keys and is more secure but slower. TLS uses a combination of both.
+
+---
+
+### **Q43. What is AES vs RSA?**
+
+AES is a symmetric cipher used for bulk data encryption. RSA is asymmetric and used for key exchange. Both are widely used in secure communication.
+
+---
+
+### **Q44. What is a DDoS Attack?**
+
+A DDoS attack floods a server with massive traffic to make it unavailable. Attackers use botnets to overload servers. Mitigation includes rate-limiting, CDNs, and WAFs.
+
+---
+
+# 🔵 **7️⃣ CLOUD & DEVOPS NETWORKING**
+
+---
+
+### **Q45. What is a VPC?**
+
+A VPC is a logically isolated virtual network in cloud environments like AWS. You control IP ranges, subnets, route tables, and gateways. It is the foundation of cloud networking.
+
+---
+
+### **Q46. What is a Subnet?**
+
+A subnet divides a VPC into smaller networks such as public and private subnets. Public subnets have internet access; private subnets do not. Subnets improve security and traffic control.
+
+---
+
+### **Q47. What is a Route Table?**
+
+Route tables contain rules that decide where traffic should go. Example: “0.0.0.0/0 → IGW” means internet traffic goes to Internet Gateway. Every subnet must be attached to a route table.
+
+---
+
+### **Q48. What is an Internet Gateway?**
+
+Internet Gateway provides public internet access to VPC resources. It handles bidirectional traffic for public subnets. Without IGW, EC2 cannot reach the internet.
+
+---
+
+### **Q49. What is a NAT Gateway?**
+
+NAT Gateway allows private subnet instances to access the internet without exposing themselves. It only allows **outbound** traffic. It is used for package downloads, OS updates, etc.
+
+---
+
+### **Q50. What is a Security Group?**
+
+Security Groups act as virtual firewalls at the instance level. They allow rules but do not deny; default is deny-all. They are stateful.
+
+---
+
+### **Q51. What is a NACL?**
+
+Network ACLs act at the subnet level and are stateless. They explicitly allow or deny traffic. Every request and response is checked separately.
+
+---
+
+### **Q52. What is a Service Mesh?**
+
+A service mesh manages communication between microservices using sidecar proxies. It enables traffic control, security, mTLS, and observability. Tools include Istio and Linkerd.
+
+---
+
+# 🔵 **8️⃣ ADVANCED NETWORKING**
+
+---
+
+### **Q53. What is a CDN?**
+
+A CDN caches content geographically to deliver faster to users. It reduces latency and offloads traffic from origin servers. Examples: CloudFront, Akamai.
+
+---
+
+### **Q54. What is BGP?**
+
+BGP is the protocol that routes data between ISPs and autonomous systems on the internet. It decides the best path based on routing policies. It is the backbone of internet routing.
+
+---
+
+### **Q55. What is VLAN?**
+
+A VLAN logically segments a switch into multiple virtual networks. It improves security and reduces broadcast traffic. VLANs let different departments stay isolated.
+
+---
+
+### **Q56. What is MPLS?**
+
+MPLS is high-performance routing that uses labels instead of IP lookups. It is used by ISPs for fast, predictable traffic forwarding. MPLS is common in enterprise WANs.
+
+---
+
+# 🔵 **9️⃣ NETWORKING TOOLS**
+
+---
+
+### **Q57. What is Ping?**
+
+Ping tests connectivity between devices by sending ICMP echo requests. It checks round-trip time and packet loss. Useful for basic troubleshooting.
+
+---
+
+### **Q58. What is Traceroute?**
+
+Traceroute shows the path packets take to reach a destination. It identifies each hop and delay. Helps troubleshoot routing issues.
+
+---
+
+### **Q59. What is cURL?**
+
+cURL sends HTTP requests from the command line, used for API testing. It supports GET, POST, PUT, DELETE and more. DevOps engineers use it to debug services.
+
+---
+
+### **Q60. What is Netcat?**
+
+Netcat (nc) is a networking Swiss Army knife. It checks open ports, sends/receives data, and creates TCP/UDP connections. Great for debugging services and firewalls.
+
+---
+
+### **Q61. What is Wireshark?**
+
+Wireshark is a packet analyzer that captures real-time network traffic. It helps debug network issues, latency, and protocol-level problems.
+
+---
+
+# 🟪 **🔟 PORT NUMBERS (DevOps, DevSecOps, Databases)**
+
+---
+
+## **🟦 DevOps Tools Ports**
+
+| Tool                  | Port            |
+| --------------------- | --------------- |
+| Jenkins               | 8080            |
+| GitLab                | 80 / 443 / 8080 |
+| SonarQube             | 9000            |
+| Docker Registry       | 5000            |
+| Kubernetes API Server | 6443            |
+| etcd                  | 2379–2380       |
+| Prometheus            | 9090            |
+| Grafana               | 3000            |
+| Alertmanager          | 9093            |
+| Node Exporter         | 9100            |
+
+---
+
+## **🟥 DevSecOps Tools Ports**
+
+| Tool          | Port        |
+| ------------- | ----------- |
+| Vault         | 8200        |
+| Consul        | 8500        |
+| Nexus         | 8081        |
+| Elasticsearch | 9200 / 9300 |
+| Kibana        | 5601        |
+| Logstash      | 5044        |
+| OpenVAS       | 9392        |
+
+---
+
+## **🟩 Database Ports**
+
+| Database       | Port        |
+| -------------- | ----------- |
+| MySQL          | 3306        |
+| PostgreSQL     | 5432        |
+| MongoDB        | 27017       |
+| Redis          | 6379        |
+| MariaDB        | 3306        |
+| Cassandra      | 9042        |
+| Neo4j          | 7474 / 7687 |
+| DynamoDB Local | 8000        |
+
+---
