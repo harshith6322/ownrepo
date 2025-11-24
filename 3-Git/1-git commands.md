@@ -1,5 +1,7 @@
 ##GIT
-
+1.30+ commands
+2.git hooks
+3.github
 
 0.git config --global user.name "harshith"
   git config --global user.email "user-gmail"
@@ -194,25 +196,47 @@ git config --global alias.lg "log --oneline --graph --decorate --all"
 
 
 24. git archive  ==> Creates a zip/tar file of your repo without the .git history.
-
 Example:
 git archive -o project.zip HEAD
 
-Useful when:
-You want to share code but not Git history.
-You want to deploy only source files.
 
 
 25. git notes  ==> Attach extra metadata to commits without changing the commit hash.
-
 Example:
 git notes add -m "Reviewed by Harshith"
 git notes show <commit>
 
 
-Useful when:
-You want to add review comments, CI metadata, issue IDs.
-You don't want to change commit history.
+26. Git Submodules (New)
+git submodule add https://github.com/user/repo.git path/   # add submodule at path/
+git submodule update --init --recursive                     # init and update submodules (after clone)
+
+
+
+27. Git Hooks (New)
+Git hooks are scripts in .git/hooks/ that run on Git events. Make the hook executable (chmod +x .git/hooks/pre-commit).
+
+Client-side Hooks 
+pre-commit # run before creating a commit (lint/tests)
+prepare-commit-msg # modify commit message template
+commit-msg # validate commit message
+pre-push # run before push (integration tests)
+
+Server-side Hooks (on Git server)
+pre-receive # reject pushes that don't meet policy
+update # validate branch updates
+post-receive # trigger CI/CD after push
+
+Example pre-commit (.git/hooks/pre-commit):
+#!/bin/bash
+npm test || { echo "Tests failed"; exit 1; }
+(This will block commits if tests fail locally.)
+
+
+
+
+
+
 
 
 
