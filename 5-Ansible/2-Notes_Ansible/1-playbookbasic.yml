@@ -1,0 +1,42 @@
+- name: basic
+  hosts: slaves
+  become: yes
+  connection: ssh
+
+
+# state: present , absent , latest , started , stopped , restarted 
+  vars:
+    package: httpd
+    p: present
+    a: absent
+
+
+  tasks:
+    - name: tree
+      action: yum name=tree state={{p}}
+
+    - name: htop
+      yum: name=htop state=present
+
+    - name: java
+      ansible.builtin.yum:
+        name: java-21-amazon-corretto.x86_64
+        state: present
+        
+    - name: install httpd
+      package:
+        name: "{{package}}"
+        state: present
+
+    - name: remove all
+      yum: name={{item}} state=absent
+      loop:
+        - tree
+        - htop
+        - java
+        - httpd
+
+
+    - name: find etc
+      shell: cd / && ls -lar | grep -i "etc"
+

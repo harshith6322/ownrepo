@@ -146,20 +146,7 @@ Netid  State  Local Address:Port   Peer Address:Port  Process
 tcp    LISTEN 0.0.0.0:22           0.0.0.0:*          sshd
 ```
 
----
 
-### 🔹 `netstat` (Older alternative)
-
-Shows network connections, routing tables, and interface stats.
-
-**Examples:**
-
-```bash
-netstat -tuln
-netstat -anp
-```
-
----
 
 ---
 
@@ -257,22 +244,6 @@ ifconfig eth0 up
 ---
 
 ## 🧱 **6. Network Connectivity & Port Testing**
-
-For verifying if a **port is open and reachable** from a system.
-
-### 🔹 `telnet`
-
-Tests connectivity to a specific host and port.
-
-**Example:**
-
-```bash
-telnet google.com 80
-```
-
-If it connects → port is open.
-
----
 
 ### 🔹 `nc` (netcat)
 
