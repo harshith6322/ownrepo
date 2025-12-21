@@ -4,7 +4,6 @@
   become: yes
   connection: ssh
 
-
   vars:
     p: present
     a: absent
@@ -12,16 +11,14 @@
   vars_files:
     - token.yml
 
-
   tasks:
-
-  # loops
+    # loops
     - name: adding list of users
       user: name={{item}} state={{p}} create_home=yes
       loop:
         - harshith
         - divya
-        - hima 
+        - hima
 
     - name: removing list of users
       user: name={{item}} state="{{a}}"
@@ -30,41 +27,42 @@
         - divya
         - hima
 
-
-
-  # conditon when
+    # conditon when
     - name: install docker on RedHat
       yum:
         name: docker
-        state: '{{p}}'
+        state: "{{p}}"
       when: ansible_facts['os_family'] == "RedHat"
       tags: docker
 
-
     - name: install docker on Debian
-      apt: 
+      apt:
         name: docker.io
-        state: '{{p}}'
+        state: "{{p}}"
       when: ansible_facts['os_family'] == "Debian"
       tags: docker
-  # tags
-  # TO EXECUTE A SINGLE TASK: ansible-playbook abc.yml --tags tagname
-  # TO EXECUTE A MULTIPLE TASK: ansible-playbook abc.yml --tags tagname1,tagname2
-  # TO SKIP A TASK: ansible-playbook abc.yml --skip-tags “uninstall”
+    # tags
+    # TO EXECUTE A SINGLE TASK: ansible-playbook abc.yml --tags tagname
+    # TO EXECUTE A MULTIPLE TASK: ansible-playbook abc.yml --tags tagname1,tagname2
+    # TO SKIP A TASK: ansible-playbook abc.yml --skip-tags “uninstall”
 
-  # file and folder
+    # file and folder
     - name: creating folder
       file:
         name: devops
+        path: /root/harshith
         state: directory
         owner: root
         group: root
+        mode: "0755"
 
     - name: creating file
-      file: 
-        # name: 'jenkins.bash'
+      file:
+        name: "jenkins.bash"
         path: /root/devops/jenkins.bash
         state: touch
+        owner: root
+        group: root
         mode: "777" #permissions
 
     - name: enter data in file
@@ -72,12 +70,22 @@
         # src:
         dest: /root/devops/jenkins.bash
         content: |
-            echo "hi from ansibe-playbook"
+          echo "hi from ansibe-playbook"
+          content: "Today's date is: {{ ansible_date_time.date }}"
 
-    - name: jenkins
-      get_url:
-        url:  https://pkg.jenkins.io/redhat-stable/jenkins.repo
-        dest: /etc/yum.repos.d/jenkins.repo
+    - name: Copy a single file
+      copy:
+        src: /path/to/local/file.txt
+        dest: /path/to/remote/file.txt
+
+    - name: Download a file from a URL
+      ansible.builtin.get_url:
+        url: https://example.com/some_file.tar.gz
+        dest: /tmp/some_file.tar.gz
+        checksum: sha256:abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890
+        mode: "0644"
+        owner: root
+        group: root
 
     - name: command
       command: cat  /etc/yum.repos.d/jenkins.repo
@@ -87,37 +95,28 @@
       debug:
         msg: this is output {{output.stdout}}
 
-
     - name: shell
-      shell:  /root/devops/jenkins.bash #to run shell scritps
+      shell: /root/devops/jenkins.bash #to run shell scritps
 
-
-
-  # git
-  # ansible-playbook 2-playbook-modules.yml  --ask-vault-pass
+    # git
+    # ansible-playbook 2-playbook-modules.yml  --ask-vault-pass
     - name: git
       git:
         # repo: https://github.com/harshith6322/DevOps_jenkins_CI-CD.git  #publick repo
-        repo: https://{{ github_token }}@github.com/harshith6322/harshithreddy6322.github.io.git #pvt repo 
+        repo: https://{{ github_token }}@github.com/harshith6322/harshithreddy6322.github.io.git #pvt repo
         dest: /root/githubproject
       changed_when: true
-      
-  # handlers
+
+    # handlers
     - name: httpd
       yum:
         name: httpd
-        state: '{{p}}'
+        state: "{{p}}"
       notify: starting httpd
-      changed_when: true #to trigger handler 
-    
+      changed_when: true #to trigger handler
+
   handlers:
     - name: starting httpd
       service:
         name: httpd.service
         state: started
-
-
-
-    
-
-

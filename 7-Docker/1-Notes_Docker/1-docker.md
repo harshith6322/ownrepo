@@ -33,6 +33,7 @@
 
 7. **Push Image to a Registry**
    `docker login`
+   `docker login -u harshithreddy6322 -p password`
    `docker push`
 
 8. **Check Container Logs**  

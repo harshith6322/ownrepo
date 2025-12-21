@@ -1,0 +1,156 @@
+name: Triggers Events
+
+on:
+  push:
+    branches:
+      # - "main"
+      - "feature/**"
+      - "master/**"
+
+    paths:
+      - "**"
+      - "!*.md"
+      - "!doc/**"
+    
+    # branches-ignore:
+    #   - "master/**"
+    #   - "doc/**"
+
+
+
+  pull_request:
+  # pull_request_comment: 
+  # pull_request_review:
+  # pull_request_target
+    branches: 
+    #  - "main"
+     - "master"
+     - "feature"
+     - "feature/**"
+     - "master/**"
+    types:
+      - opened
+      - synchronize #updated
+      - closed
+      # - reopened
+      # - labeled
+      # - ready_for_review
+    paths: 
+      - "**"
+      - "!*.md"
+      - "!doc/**"
+
+
+
+
+  # schedule:
+    # - cron: "45 9 * * *"
+  #https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule
+
+
+
+
+  workflow_dispatch:
+
+
+  
+  workflow_run: 
+    workflows: ["Baisc Action Workflow"]
+    types:
+      - completed 
+      # - in_progress
+      # - requested
+ 
+    
+
+  issues:
+    types:
+      - opened
+      - closed
+      - reopened
+
+
+  release:
+    types:
+      - released
+      - published
+      - deleted
+
+  label:
+    types: [created, deleted]
+
+  delete:
+  
+
+
+
+        
+
+jobs: 
+  STAGE-1:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: step-1"
+        run: |
+          echo "stage-1"
+          date
+      - name: step-2 Dump full event JSON
+        run: |
+          echo "=== $GITHUB_EVENT_NAME payload ==="
+          cat "$GITHUB_EVENT_PATH"
+
+
+
+# IF conditions
+# jobs:
+#   build:
+        # if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Run only on main branch
+#         if: ${{ github.ref == 'refs/heads/main' }}
+#         run: echo "This runs only on main"
+
+
+# loops
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest
+#     strategy:
+#       matrix:
+#         node: [14, 16, 18]
+#     steps:
+#       - run: echo "Testing with Node.js ${{ matrix.node }}"
+
+
+
+
+# | Trigger                | When it runs                | Permissions               | Purpose                |
+# | ---------------------- | --------------------------- | ------------------------- | ---------------------- |
+# | `pull_request`         | On PR events                | **Restricted**            | CI for PR code         |
+# | `pull_request_review`  | When reviews submitted      | Limited                   | React to approvals     |
+# | `pull_request_target`  | Runs in base branch context | **Full access + secrets** | Bots, labels, comments |
+# | `pull_request_comment` | On comment (via app)        | Medium                    | ChatOps commands       |
+
+
+
+
+
+
+# | Trigger             | Important? | Why use it?                  |
+# | ------------------- | ---------- | ---------------------------- |
+# | push                | ⭐⭐⭐⭐⭐      | CI on branch push            |
+# | pull_request        | ⭐⭐⭐⭐⭐      | PR CI                        |
+# | pull_request_target | ⭐⭐⭐⭐⭐      | Write PR comments / security |
+# | workflow_dispatch   | ⭐⭐⭐⭐       | Manual trigger               |
+# | workflow_run        | ⭐⭐⭐        | Chain workflows              |
+# | release             | ⭐⭐⭐⭐       | Deployments                  |
+# | create              | ⭐⭐⭐        | Auto rules for new branches  |
+# | delete              | ⭐⭐⭐        | Auto cleanup                 |
+# | registry_package    | ⭐⭐         | For GHCR events              |
+# | schedule            | ⭐⭐⭐        | Cron jobs                    |
+# | issues              | ⭐⭐         | Bots                         |
+# | label               | ⭐⭐         | Auto labeling / assign       |
+
+

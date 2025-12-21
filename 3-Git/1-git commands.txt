@@ -14,13 +14,17 @@
 
 (image for git workflow)
 
+
+
 3.git init ==> initialization of git in new projects
   git clean -f <FileName> ==> Remove untracked files from the working directory.
 
 4.git add <filename> OR \* OR . ==> adding file or folder to staged area
 
+
+
 5.git commit -m "first commit"
-  git commit -am "Your commit message here" ==>commit without staging area
+  git commit -a -m "Your commit message here" ==>commit without staging area
 
 --amend--
   git commit --amend -m "change recent commit message" ==>used to change the commit message for only latest commit
@@ -42,6 +46,8 @@ git log --stats ==> full info
 git log --after="date"
 git log --grep="wordname"
 
+1
+
 8.git rm --cache [file-name.txt] ==>Remove a file (folder) from staging stage and git will not track it it like adding it to .gitignore work any time
   git restore --staged filename ==>Remove a file (or folder) from staging area and git still track it and only work
 when there atlest one commit
@@ -51,11 +57,11 @@ when there atlest one commit
   git reset --hard (HEAD~1 OR commitID) ==>used to delete the latest commit along with the changes
   git reset --mixed (this is defult one) (HEAD~1 OR commitID) ==>used to delete commit history and stagging area
 
-|           | Option | Commit History | Staging Area | Working Directory |
-| --------- | ------ | -------------- | ------------ | ----------------- |
-| `--soft`  |        | ✅ reset       | ✅ keep      | ✅ keep           |
-| `--mixed` |        | ✅ reset       | ❌ clear     | ✅ keep           |
-| `--hard`  |        | ✅ reset       | ❌ clear     | ❌ clear          |
+|           | Option   | Commit History | Staging Area | Working Directory |
+| --------- | -------- | -------------- | ------------ | ----------------- |
+| `--soft`  | ✅ reset | ✅ keep        | ✅ keep      |
+| `--mixed` | ✅ reset | ❌ clear       | ✅ keep      |
+| `--hard`  | ✅ reset | ❌ clear       | ❌ clear     |
 
 (image for diff btw soft hard mixed)
 
@@ -82,6 +88,7 @@ git checkout branch-name ==>to switch one branch to another
   git checkout -b [branch name] origin/[branch name] ==>Clone a remote branch and switch to it
 git checkout -b <new-branch-name> <commit-hash> ==> ==>Used to get deleted branch id
   git switch brnach-name ==>to switch one branch to another
+  git diff [source branch] [target branch] ==>Preview changes before merging
 
 13.git merge <branch-name> ==> Merging a branch
   git merge [source branch] [target branch] ==>Merge a branch into a target branch
@@ -186,40 +193,37 @@ Example pre-commit (.git/hooks/pre-commit):
 npm test || { echo "Tests failed"; exit 1; }
 (This will block commits if tests fail locally.)
 
-1. git config
-2. git -v
-3. git init
-4. git clean -f
-5. git add
-6. git rm --cached
-7. git restored --stagged
-8. git commit -am
-9. git log
-10. git status
-11. git show
-12. git diff
-13. git reset
-14. git revert
-15. git branch
-16. git checkout
-17. git switch
-18. git merge
-19. git rebase
-20. git rebase -i
-21. git cherry-pick
-22. git clone
-23. git fetch
-24. git pull
-25. git push
-26. git reflog
-27. git remote
-28. git tag
-29. git stash
-30. git blame
-31. git prune and git gc
-32. git fsck
-33. git submodule
-34. git notes
+1.git -v
+2.git init
+3.git clean -f <filename>
+4.git add \* or .
+5.git rm --cached
+6.git restore --staged
+7.git commit -am <message>
+8.git status
+9.git log
+10.git show
+11.git diff
+12.git reset --hard --soft --mixed
+13.git revert
+14.git branch
+15.git checkout
+16.git switch
+17.git merge
+18.git rebase
+19.git clone
+20.git pull
+21.git push
+22.git fetch
+23.git cherry-pick
+24.git stash
+25.git tag
+26.git remote
+27.git reflog
+28.git config
+29.git blame
+30.git fsck
+31.git prune && git gc
 
 Summary of Git Best Practices
 Commit Often
@@ -229,4 +233,4 @@ Pull Before You Push
 Review Changes Before Committing
 Keep Repositories Small
 Use .gitignore
-Tag Releasesw
+Tag Releases

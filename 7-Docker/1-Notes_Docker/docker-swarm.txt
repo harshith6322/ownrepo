@@ -21,7 +21,7 @@ yum install docker -y && systemctl start docker
 
    10  docker service ls
 
-   11  docker service ps mustafa
+   11  docker service ps mustafa////////
 
    12  docker ps
 

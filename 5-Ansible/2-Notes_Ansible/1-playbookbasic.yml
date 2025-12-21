@@ -3,13 +3,21 @@
   become: yes
   connection: ssh
 
-
-# state: present , absent , latest , started , stopped , restarted 
+  # state: present , absent , latest , started , stopped , restarted
   vars:
     package: httpd
     p: present
     a: absent
 
+  vars_files:
+    - fiel1
+    - file2
+
+  vars_prompt:
+    - name: "username"
+      prompt: "Enter your username:"
+      private: yes # Hides input for sensitive data
+      default: "1.0" # Provides a default value
 
   tasks:
     - name: tree
@@ -22,7 +30,7 @@
       ansible.builtin.yum:
         name: java-21-amazon-corretto.x86_64
         state: present
-        
+
     - name: install httpd
       package:
         name: "{{package}}"
@@ -36,7 +44,5 @@
         - java
         - httpd
 
-
     - name: find etc
       shell: cd / && ls -lar | grep -i "etc"
-

@@ -29,62 +29,6 @@
   CMD ["node", "index.js"]
   ```
 
-### 2. **Docker Compose Commands**
-
-- **Start All Services**:
-  ```bash
-  docker-compose up -d
-  ```
-- **Stop All Services**:
-  ```bash
-  docker-compose down
-  ```
-- **Rebuild and Start**: Useful if you have made changes in the `Dockerfile` or configurations.
-  ```bash
-  docker-compose up --build
-  ```
-
-### 3. **Docker Swarm Commands**
-
-- **Initialize Swarm Mode**:
-  ```bash
-  docker swarm init
-  ```
-- **Create and Deploy a Service**:
-  ```bash
-  docker service create --name web -p 80:80 nginx
-  ```
-- **List Services in Swarm**:
-  ```bash
-  docker service ls
-  ```
-- **Scale Service**: Increase or decrease the number of replicas.
-  ```bash
-  docker service scale web=5
-  ```
-
-### 4. **Docker Volume Commands**
-
-- **List All Volumes**:
-  ```bash
-  docker volume ls
-  ```
-- **Remove a Volume**:
-  ```bash
-  docker volume rm vol-1
-  ```
-
-### 5. **Docker Network Commands**
-
-- **Inspect Network**: View detailed network information.
-  ```bash
-  docker network inspect my_custom_network
-  ```
-- **Remove a Network**:
-  ```bash
-  docker network rm my_custom_network
-  ```
-
 ### 6. **Docker Health Checks**
 
 Add health checks to monitor the state of your containers:
@@ -156,8 +100,7 @@ docker tag source_image:tag target_image:tag
 - **Import an Exported Filesystem as a New Image**:
 
   ```bash
-  cat container_name.tar | docker import - imported_image_name
-  docker load < container.tar
+  docker import app.tar app:new
 
   ```
 

@@ -10,7 +10,6 @@ An **Operating System (OS)** is system software that acts as an intermediary bet
 ### Example:
 
 - Common operating systems: **Windows, macOS, Linux, Android, iOS**
-
 ---
 
 ## 2. Functions of an Operating System
