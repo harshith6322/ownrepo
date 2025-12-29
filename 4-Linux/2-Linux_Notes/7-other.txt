@@ -1,3 +1,24 @@
+tmux:
+
+Session
+ ├── Window 1
+ │    ├── Pane 1
+ │    └── Pane 2
+ └── Window 2
+
+tmux -v
+tmux new -t or -s name
+tmux ls
+tmux attach or a -t name
+tmux kill-session -t name
+Ctrl + b , then c ->for new panel
+Ctrl + b , then n or p ->move btw panels
+Ctrl + b , then d ->to exit
+Ctrl + b , then % 
+Ctrl + b , then arrows 
+
+
+
 rsync:
 a=(Archive Mode)
 v=verbose
@@ -8,8 +29,6 @@ r=Recurse into directories
 
 rsync -avz --progress -e "ssh -i new-aws-key.pem" -r  yes.logs ubuntu@54.91.139.78:/home/ubuntu/
 rsync -avz --progress -e "ssh -i new-aws-key.pem"  ubuntu@54.91.139.78:/home/ubuntu/yes.logs .
-
-
 
 
 tar:
