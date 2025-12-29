@@ -47,6 +47,9 @@
     `docker logs <id>`
     `docker ps -a`
 
+11 **commit**
+`docker commit -m "mynginx-harshith" <current-image-name> <new-image-name>`
+
 ---
 
 ## Creating a Docker Image

@@ -30,6 +30,7 @@ A **Docker registry is just a container** that stores Docker images.
 docker run -d \
 -p 5000:5000 \
 --name registry \
+--constraint 'node.role==manager' \
 registry:2
 
  docker run -d -p 5000:5000 --restart always --name registry registry:3

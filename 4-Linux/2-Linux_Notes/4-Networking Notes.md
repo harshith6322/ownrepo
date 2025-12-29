@@ -1,7 +1,5 @@
 ---
-
 # 🧠 **Networking Commands for DevOps & DevSecOps Engineers**
-
 ---
 
 ## 🧩 **1. Connectivity Testing Tools**
@@ -25,6 +23,9 @@ ping google.com
 | `-c <count>`   | Number of packets        | `ping -c 4 google.com` |
 | `-i <sec>`     | Interval between packets | `ping -i 2 8.8.8.8`    |
 | `-W <timeout>` | Timeout per request      | `ping -W 2 google.com` |
+
+ping -f =force
+ping -s 1000 = packer size
 
 ---
 
@@ -145,8 +146,6 @@ ss -tnp
 Netid  State  Local Address:Port   Peer Address:Port  Process
 tcp    LISTEN 0.0.0.0:22           0.0.0.0:*          sshd
 ```
-
-
 
 ---
 

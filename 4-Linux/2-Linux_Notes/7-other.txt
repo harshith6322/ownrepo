@@ -1,0 +1,17 @@
+rsync:
+a=(Archive Mode)
+v=verbose
+z=Compress file data
+e="ssh -i new-aws-key.pem"
+r=Recurse into directories
+--progress=Show progress during transfer
+
+rsync -avz --progress -e "ssh -i new-aws-key.pem" -r  yes.logs ubuntu@54.91.139.78:/home/ubuntu/
+rsync -avz --progress -e "ssh -i new-aws-key.pem"  ubuntu@54.91.139.78:/home/ubuntu/yes.logs .
+
+
+
+
+tar:
+tar -cvf app.tar source --creating zip file
+tar -xcf app.tar --unzip file
