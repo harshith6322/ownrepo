@@ -108,8 +108,6 @@
   - **Symmetric vs Asymmetric Encryption:** Symmetric uses the same key for encryption/decryption; Asymmetric uses a public/private key pair.
   - **Common Protocols:** AES (symmetric), RSA (asymmetric) are widely used encryption standards.a
 
-
-
 - **DDoS Protection:**
   - **How DDoS Attacks Work:** Overwhelms a server with traffic, causing a denial of service.
   - **Protection Methods:** Rate limiting, traffic filtering, and using CDNs to absorb traffic.

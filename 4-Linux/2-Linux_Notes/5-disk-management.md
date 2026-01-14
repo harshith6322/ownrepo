@@ -221,6 +221,7 @@ mkdir /data
 
 ```bash
 mount /dev/nvme1n1p1 /data
+umount /data
 ```
 
 Verify:

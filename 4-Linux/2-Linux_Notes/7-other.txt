@@ -33,4 +33,40 @@ rsync -avz --progress -e "ssh -i new-aws-key.pem"  ubuntu@54.91.139.78:/home/ubu
 
 tar:
 tar -cvf app.tar source --creating zip file
-tar -xcf app.tar --unzip file
+tar -xvf app.tar --unzip file
+
+tar + gzip (.tar.gz or .tgz)
+tar -czvf archive.tar.gz folder/
+tar -xzvf archive.tar.gz
+tar -czvf logs-$(date +%F).tar.gz /var/log/nginx
+
+
+zip:
+-r - Recursively zip directories
+-u - Update files in the archive if they are newer
+-d - Delete files from the archive
+-e - Encrypt the contents of the ZIP archive
+-x - Exclude specific files from being zipped
+
+uznip:
+-l - List archive files
+-t - Test compressed archive files
+-d - Extract files into a different directory
+-o - Overwrite existing files without prompting
+-x - Exclude specific files from being extracted
+
+
+
+crontab
+* * * * * command
+| | | | |
+| | | | └─ Day of week (0-7) (Sunday=0 or 7)
+| | | └── Month (1-12)
+| | └─── Day of month (1-31)
+| └──── Hour (0-23)
+└───── Minute (0-59)
+
+
+crontab -e too edit
+crontab -l too list all 
+crontab -r too remove every thing
