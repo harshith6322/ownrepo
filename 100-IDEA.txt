@@ -1,0 +1,34 @@
+now:
+nfs-setup:syn some folders to multi vms in smae network
+
+
+
+
+small:
+nfs-setup
+kvm setup on baremetal
+service file for own service
+
+medium:
+sql master-replic setup
+
+
+
+good:
+raspberrypi 5 with 8gb ram 2vm setup using kvm
+
+
+
+
+other:
+raspberrypi-basic
+
+
+
+linkedinPost:
+linux-networking
+linux-top
+linux-disk-management
+linux-pv
+linux-service
+linux-watch

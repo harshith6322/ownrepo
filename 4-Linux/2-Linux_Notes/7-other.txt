@@ -14,7 +14,7 @@ tmux kill-session -t name
 Ctrl + b , then c ->for new panel
 Ctrl + b , then n or p ->move btw panels
 Ctrl + b , then d ->to exit
-Ctrl + b , then % 
+Ctrl + b , then % and "
 Ctrl + b , then arrows 
 
 
@@ -70,3 +70,78 @@ crontab
 crontab -e too edit
 crontab -l too list all 
 crontab -r too remove every thing
+
+
+
+
+
+SED (Stream Editor) – Text Replace / Modify
+Basic syntax
+sed 's/old/new/' file
+
+Replace first match
+sed 's/error/ERROR/' app.log
+
+Replace all
+sed 's/error/ERROR/g' app.log
+
+In-place edit
+sed -i 's/8080/9090/g' config.yaml
+
+Delete lines
+sed '/ERROR/d' app.log
+
+
+📌 Use sed when:
+➡ Replace, delete, edit text line by line
+
+
+
+AWK – Column & Pattern Processing
+Print specific column
+awk '{print $1}' file
+
+Print multiple columns
+awk '{print $1, $3}' file
+
+With condition
+awk '$3 > 500 {print $1, $3}' data.txt
+
+Field separator
+awk -F ":" '{print $1}' /etc/passwd
+
+
+📌 Use awk when:
+➡ Structured data (columns, logs, metrics)
+
+
+🔧 SORT – Sorting Text
+Normal sort
+sort file
+
+Numeric sort
+sort -n numbers.txt
+
+Reverse
+sort -r file
+
+Unique
+sort file | uniq
+
+Sort by column
+sort -k2 file
+
+
+📌 Use sort when:
+➡ Ordering logs, reports, numbers
+
+
+pushd → go + save
+popd  → go back
+dirs  → show saved paths
+
+Linux      → ext4, xfs, btrfs
+Windows    → NTFS
+USB        → FAT32, exFAT
+Network    → NFS, SMB
+Containers → overlayfs

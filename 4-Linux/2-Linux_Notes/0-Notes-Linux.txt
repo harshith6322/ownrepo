@@ -1,0 +1,43 @@
+-----------Linux---------Notes
+bash=bourn agian shell
+#!/bin/bash path of bash
+
+
+-------commands-structure-----------
+command -- options -- arguments
+ls         -lath      /home/ubuntu/folder1
+
+root@ip-172-31-21-92:/home/ubuntu#
+current-user hostname  current-path
+
+
+--------short-curts------
+ctrl + a 
+ctrl + e 
+ctrl + u
+ctrl + k
+ctrl + t
+ctrl + r
+
+
+-------commands----------
+stat file-name or folder-name   = Display file or file system status.
+apropos <command> network       = search command related to networking
+file                            = tells more about file 
+
+rm file?.txt                     = delete only file1,file2 not file.txt
+
+find . -name "*v*" or -iname "v" 
+
+
+chmod, chown, chgrp
+r=4
+w=2
+x=1
+
+rwx-rwx-rwx = user,group,other,all
+u-g-o-a
+
++,-,=,
+chmod u+rwz
+chmod a(all)-x
