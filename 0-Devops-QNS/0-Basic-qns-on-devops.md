@@ -72,14 +72,7 @@ Test hypotheses
 
 Ask clearly
 
-Great notes 👍
-Below I’m **adding more _conceptual_ interview-ready content** around **DevOps, DevSecOps, SRE, Platform Engineering, Cloud-native practices, and operating principles** — **no tool-specific Q&A**, only _how you think and operate_, which interviewers love.
-
-You can merge this directly into your notes.
-
 ---
-
-# Extended DevOps Interview Notes (Conceptual)
 
 ## 10. DevOps Core Principles (CAMS)
 
@@ -108,7 +101,6 @@ DevSecOps means:
 
 - **Security is a shared responsibility**
 - Security baked into:
-
   - Design
   - Development
   - CI/CD
@@ -296,45 +288,6 @@ Goal:
 
 ---
 
-## 22. Automation vs Toil
-
-### Toil (SRE concept)
-
-- Manual
-- Repetitive
-- Reactive
-- No long-term value
-
-### Automation
-
-- Eliminates toil
-- Improves consistency
-- Frees engineers for higher-value work
-
-Rule:
-
-> If you do it twice → automate it
-
----
-
-## 23. Immutable vs Mutable Infrastructure
-
-### Mutable
-
-- SSH into servers
-- Manual changes
-- Configuration drift
-
-### Immutable
-
-- Replace instead of modify
-- Declarative approach
-- Predictable & repeatable
-
-💡 Immutable infra is core to modern DevOps.
-
----
-
 ## 24. Shift-Left vs Shift-Right
 
 ### Shift-Left
@@ -366,19 +319,6 @@ Benefits:
 - Traceability
 - Easy rollback
 - Declarative operations
-
----
-
-## 26. DevOps Metrics (DORA Metrics)
-
-Four key metrics:
-
-- Deployment frequency
-- Lead time for changes
-- Mean time to recovery
-- Change failure rate
-
-Used to measure **team performance**, not individuals.
 
 ---
 

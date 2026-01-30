@@ -1,16 +1,15 @@
 now:
-nfs-setup:syn some folders to multi vms in smae network
+nfs-setup:syn some folders to multi vms in smae network ---done
 
 
 
 
 small:
-nfs-setup
 kvm setup on baremetal
 service file for own service
 
 medium:
-sql master-replic setup
+sql master-slave replic setup
 
 
 
@@ -26,8 +25,8 @@ raspberrypi-basic
 
 
 linkedinPost:
-linux-networking
-linux-top
+linux-networking   --done
+linux-top   
 linux-disk-management
 linux-pv
 linux-service

@@ -24,7 +24,7 @@
 
 
 5.git commit -m "first commit"
-  git commit -a -m "Your commit message here" ==>commit without staging area
+  git commit -am "Your commit message here" ==>commit without staging area
 
 --amend--
   git commit --amend -m "change recent commit message" ==>used to change the commit message for only latest commit
@@ -59,9 +59,9 @@ when there atlest one commit
 
 |           | Option   | Commit History | Staging Area | Working Directory |
 | --------- | -------- | -------------- | ------------ | ----------------- |
-| `--soft`  | ✅ reset | ✅ keep        | ✅ keep      |
-| `--mixed` | ✅ reset | ❌ clear       | ✅ keep      |
-| `--hard`  | ✅ reset | ❌ clear       | ❌ clear     |
+| `--soft`  |          | ✅ reset | ✅ keep        | ✅ keep      |
+| `--mixed` |          | ✅ reset | ❌ clear       | ✅ keep      |
+| `--hard`  |          | ✅ reset | ❌ clear       | ❌ clear     |
 
 (image for diff btw soft hard mixed)
 

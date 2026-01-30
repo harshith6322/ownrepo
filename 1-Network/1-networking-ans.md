@@ -134,4 +134,3 @@
   - **HTTP Requests:** Curl and Wget are command-line tools for sending HTTP requests, useful for testing APIs or downloading files.
 
 These concise answers will help you in interviews and give you a solid foundation in networking concepts. Let me know if you need further clarification or want to practice with more questions!
-2
