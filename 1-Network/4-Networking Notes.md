@@ -37,6 +37,9 @@ Traces the route packets take to reach a destination (layer 3 path).
 
 ```bash
 traceroute google.com
+traceroute -T
+traceroute -T -p 443 harshith6322.github.io (-T = tcp , -p =port)
+
 ```
 
 **Useful Flags:**

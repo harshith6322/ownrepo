@@ -217,26 +217,6 @@ So we design for:
 
 ---
 
-## 18. Error Budgets (Very Important)
-
-Error budget =
-**Allowed unreliability = 100% − SLO**
-
-If service has 99.9% SLO:
-
-- Error budget = 0.1%
-
-How used:
-
-- Spend on innovation & changes
-- Freeze deployments if budget exhausted
-
-Balances:
-
-- **Reliability vs velocity**
-
----
-
 ## 19. Observability vs Monitoring
 
 ### Monitoring
