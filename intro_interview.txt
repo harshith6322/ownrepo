@@ -14,3 +14,12 @@ scripting->bash-script,python(basics)
 securrity-tool -> sonar-qube,nexsus,trivy,docker-scout,owasp
 
 
+Hi, I’m Harshith Reddy. I completed my B.Tech in Computer Science in 2024, and I’m currently working as a DevOps Intern at ITS Planners and Engineers.
+
+In my internship, I mainly work on Docker image builds, CI/CD automation using Jenkins and GitHub Actions, and Kubernetes-based deployments. I also manage Git integration workflows and help maintain build consistency across different environments.
+
+I’ve worked on configuring Ubuntu Server on Raspberry Pi devices and automating firmware upgrades using Ansible, which helped me understand Linux systems and low-level debugging better.
+
+In addition, I built a DevSecOps CI/CD pipeline project where I integrated static analysis, vulnerability scanning, containerization, Kubernetes deployment, and GitOps using ArgoCD.
+
+I’m particularly interested in build integration roles because I enjoy working at the intersection of development, automation, and system reliability.

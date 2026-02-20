@@ -10,7 +10,7 @@
 1.npm install git ==>to install git
 
 2. git -v ==>to know version
-     git --version ==>to current know version
+   git --version ==>to current know version
 
 (image for git workflow)
 
@@ -44,11 +44,12 @@ git update-ref -d HEAD ==>used to delete first commit
   git log --follow --all <FileName> ==>filename used to see the no of commits for a single file
 git log --stats ==> full info
 git log --after="date"
+git log --after="2026-02-01" --before="2026-02-05"
 git log --grep="wordname"
 
 1
 
-8.git rm --cache [file-name.txt] ==>Remove a file (folder) from staging stage and git will not track it it like adding it to .gitignore work any time
+8.git rm --cache [file-name.txt]     ==>Remove a file (folder) from staging stage and git will not track it it like adding it to .gitignore work any time
   git restore --staged filename ==>Remove a file (or folder) from staging area and git still track it and only work
 when there atlest one commit
   git reset filename ==>Remove a file (or folder) from staging area
@@ -57,11 +58,12 @@ when there atlest one commit
   git reset --hard (HEAD~1 OR commitID) ==>used to delete the latest commit along with the changes
   git reset --mixed (this is defult one) (HEAD~1 OR commitID) ==>used to delete commit history and stagging area
 
-|           | Option   | Commit History | Staging Area | Working Directory |
-| --------- | -------- | -------------- | ------------ | ----------------- |
-| `--soft`  |          | ✅ reset | ✅ keep        | ✅ keep      |
-| `--mixed` |          | ✅ reset | ❌ clear       | ✅ keep      |
-| `--hard`  |          | ✅ reset | ❌ clear       | ❌ clear     |
+| Command | Commit Removed | Staging Area | Working Directory |
+| ------- | -------------- | ------------ | ----------------- |
+| --soft  | ✅ Yes          | ✅ Kept       | ✅ Kept            |
+| --mixed | ✅ Yes          | ❌ Removed    | ✅ Kept            |
+| --hard  | ✅ Yes          | ❌ Removed    | ❌ Removed         |
+
 
 (image for diff btw soft hard mixed)
 

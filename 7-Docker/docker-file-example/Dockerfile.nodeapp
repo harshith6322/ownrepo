@@ -36,3 +36,12 @@ USER nodeapp
 EXPOSE 3000
 
 CMD ["node", "src/index.js"]
+
+
+FROM node:22
+MAINTAINER HARSITH
+LABEL key="value" key="VALYW"
+COPY source dest
+RUN 
+CMD [ "executable" ]
+ENTRYPOINT [ "executable" ]

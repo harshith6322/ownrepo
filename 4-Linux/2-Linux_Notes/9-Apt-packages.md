@@ -95,7 +95,7 @@ A **software warehouse** containing:
 ### Repo configuration locations
 
 ```text
-/etc/apt/sources.list
+/etc/apt/sources.listl
 /etc/apt/sources.list.d/*.list
 ```
 

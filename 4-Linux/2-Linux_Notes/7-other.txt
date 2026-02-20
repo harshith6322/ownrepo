@@ -34,6 +34,7 @@ rsync -avz --progress -e "ssh -i new-aws-key.pem"  ubuntu@54.91.139.78:/home/ubu
 tar:
 tar -cvf app.tar source --creating zip file
 tar -xvf app.tar --unzip file
+tar -tvf
 
 tar + gzip (.tar.gz or .tgz)
 tar -czvf archive.tar.gz folder/
@@ -145,3 +146,91 @@ Windows    → NTFS
 USB        → FAT32, exFAT
 Network    → NFS, SMB
 Containers → overlayfs
+
+
+
+Linux disk management
+1. blkid
+ - blkid -i /dev/sda1
+ - blkid -p /dev/sda1
+
+2. lsblk -a or -l
+    df -h
+    du -h
+
+| Column      | Meaning                         |
+| ----------- | ------------------------------- |
+| NAME        | Device name                     |
+| MAJ:MIN     | Kernel device numbers           |
+| RM          | Removable (1 = yes, 0 = no)     |
+| SIZE        | Size of device                  |
+| RO          | Read-only (1 = yes)             |
+| TYPE        | disk / part / loop              |
+| MOUNTPOINTS | Where it is mounted in Linux FS |
+
+
+
+3. disk partion tools
+  - parted, fdisk, cfdisk(cli+gui), gparted(gui),
+
+  parted
+  - h :help
+  - q :quit
+  - print all
+  - select /dev/sda1
+  - mklabel to make as gpt or mbr(old)
+  - mkpart 
+  - rm 1 (part1)
+
+  fdisk
+   - m help
+   - n (new part)
+   - l (list types)
+   - d (delete)
+   - w (write)
+
+  formating:
+     mkfs.ext4 /dev/sda1
+
+   mount:
+     mount /dev/sda1 /var or any path
+     umount /dev/sda1 /var or any path
+     tune2fs -l /dev/sda1 
+
+     partprobe /dev/xvdz -help to refresh
+     wipefs -a /dev/xvdf -help remove all thing in disk
+     isof -
+
+
+| Filesystem | Command           |
+| ---------- | ----------------- |
+| ext4       | `mkfs.ext4`       |
+| xfs        | `mkfs.xfs`        |
+| FAT32      | `mkfs.vfat -F 32` |
+| NTFS       | `mkfs.ntfs`       |
+| swap       | `mkswap`          |
+
+
+swap:
+  mkdir /fakeswap.swap
+chmod 600 /swapfile
+fallocate -l 2G /swapfile
+mkswap /swapfile
+swapon /swapfile
+swapon --show
+free -h
+
+
+
+lvm:
+pvcreate /dev/sda /dev/sdf
+vgcreate vg_mydata /dev/sda /dev/sdf
+lvcreate -L 20G -n lv_data vg_data
+
+
+
+
+
+
+
+
