@@ -46,7 +46,19 @@ Be prepared to explain why you chose a specific tool and how you used it in prac
 - DevOps: cultural/process practices to improve speed and efficiency of development and deployment.
 - SRE: applies software engineering to operations, focusing on reliability, uptime, and scalability of production systems.
 
-## 7. SRE responsibilities
+## 7. SRE AND DEVOPS responsibilities
+
+DEVOPS:
+
+- Build and maintain CI/CD pipelines
+- Automate infrastructure using IaC tools such as Terraform and CloudFormation
+- Manage containerized applications using Docker and Kubernetes
+- Implement monitoring, logging, and alerting solutions
+- Automate deployments and release processes
+- Manage cloud infrastructure (AWS, Azure, GCP)
+- Improve system scalability, security, and reliability
+
+SRE:
 
 - Define and enforce SLOs/SLIs and manage error budgets
 - Incident response, blameless postmortems, and root cause analysis
