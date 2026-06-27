@@ -367,7 +367,7 @@ Kernel-level logs for interface issues.
 | Category            | Commands                           |
 | ------------------- | ---------------------------------- |
 | 🧩 Connectivity     | `ping`, `traceroute`, `tracepath`  |
-| 🌍 DNS              | `nslookup`, `dig`                  |
+| 🌍 DNS              | `nslookup`, `dig`, ``              |
 | 🔐 Sockets/Ports    | `ss`, `netstat`                    |
 | 🌐 HTTP/API         | `curl`, `wget`                     |
 | 🧭 Interface/Routes | `ip`, `ifconfig`                   |
