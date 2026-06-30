@@ -29,7 +29,7 @@ A **Physical Server (Bare Metal Server)** is a high-performance computer designe
 
 If you install only **one OS + one app**, most resources stay unused.
 
-👉 That’s why companies **virtualize** these servers.
+👉 That’s why companies **\virtualize** these servers.
 
 ---
 
